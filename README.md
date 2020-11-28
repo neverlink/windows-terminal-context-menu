@@ -20,6 +20,7 @@ You can also set the `Position` to either `Top` or `Bottom`.
 ```
 Windows Registry Editor Version 5.00
 
+; Left Pane
 [HKEY_CLASSES_ROOT\Directory\shell\WindowsTerminalMenu]
 "Icon"="C:\\Program Files\\WindowsApps\\REPLACE_THIS\\wt.exe"
 @="Windows Terminal"
@@ -28,7 +29,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Directory\shell\WindowsTerminalMenu\command]
 @="C:\\Program Files\\WindowsApps\\REPLACE_THIS\\wt.exe -d %V"
 
-
+; Right Pane
 [HKEY_CLASSES_ROOT\Directory\Background\shell\WindowsTerminalMenu]
 "Icon"="C:\\Program Files\\WindowsApps\\REPLACE_THIS\\wt.exe"
 @="Windows Terminal"
