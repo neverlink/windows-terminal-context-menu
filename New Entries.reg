@@ -1,0 +1,18 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\shell\WindowsTerminalMenu]
+"Icon"="C:\\Program Files\\WindowsApps\\REPLACE_THIS\\wt.exe"
+@="Windows Terminal"
+"Position"=""
+
+[HKEY_CLASSES_ROOT\Directory\shell\WindowsTerminalMenu\command]
+@="C:\\Program Files\\WindowsApps\\REPLACE_THIS\\wt.exe -d %V"
+
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\WindowsTerminalMenu]
+"Icon"="C:\\Program Files\\WindowsApps\\REPLACE_THIS\\wt.exe"
+@="Windows Terminal"
+"Position"=""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\WindowsTerminalMenu\command]
+@="C:\\Program Files\\WindowsApps\\REPLACE_THIS\\wt.exe -d %V"
