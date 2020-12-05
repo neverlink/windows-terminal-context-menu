@@ -14,7 +14,7 @@ Windows Registry Editor Version 5.00
 
 ### 2. Adding the new keys
 
-Edit the path to Windows Terminal where necessary.
+Replace the path to Windows Terminal with your own, as it differs between versions.
 
 You can also set the `Position` to either `Top` or `Bottom`.
 ```
@@ -22,19 +22,19 @@ Windows Registry Editor Version 5.00
 
 ; Left Pane
 [HKEY_CLASSES_ROOT\Directory\shell\WindowsTerminalMenu]
-"Icon"="C:\\Program Files\\WindowsApps\\REPLACE_THIS\\wt.exe"
+"Icon"="C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminalPreview_1.5.3242.0_x64__8wekyb3d8bbwe\\wt.exe"
 @="Windows Terminal"
 "Position"=""
 
 [HKEY_CLASSES_ROOT\Directory\shell\WindowsTerminalMenu\command]
-@="C:\\Program Files\\WindowsApps\\REPLACE_THIS\\wt.exe -d %V"
+@="C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminalPreview_1.5.3242.0_x64__8wekyb3d8bbwe\\wt.exe -d \"%V \""
 
 ; Right Pane
 [HKEY_CLASSES_ROOT\Directory\Background\shell\WindowsTerminalMenu]
-"Icon"="C:\\Program Files\\WindowsApps\\REPLACE_THIS\\wt.exe"
+"Icon"="C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminalPreview_1.5.3242.0_x64__8wekyb3d8bbwe\\wt.exe"
 @="Windows Terminal"
 "Position"=""
 
 [HKEY_CLASSES_ROOT\Directory\Background\shell\WindowsTerminalMenu\command]
-@="C:\\Program Files\\WindowsApps\\REPLACE_THIS\\wt.exe -d %V"
+@="C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminalPreview_1.5.3242.0_x64__8wekyb3d8bbwe\\wt.exe -d \"%V \""
 ```
