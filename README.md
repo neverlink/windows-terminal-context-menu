@@ -40,6 +40,6 @@ Windows Registry Editor Version 5.00
 ```
 ### 3. Removal
 ```
-reg delete HKEY_CLASSES_ROOT\Directory\shell\WindowsTerminalMenu
-reg delete HKEY_CLASSES_ROOT\Directory\Background\shell\WindowsTerminalMenu
+reg delete HKEY_CLASSES_ROOT\Directory\shell\WindowsTerminalMenu /f
+reg delete HKEY_CLASSES_ROOT\Directory\Background\shell\WindowsTerminalMenu /f
 ```
