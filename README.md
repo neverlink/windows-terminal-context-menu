@@ -1,4 +1,4 @@
-## Context menu option to launch Windows Terminal in a directory.
+## Context menu options to launch Windows Terminal in a directory.
 
 ### 1. Removing the default "Open in Windows Terminal"
 By default, such an option exists, but only in the left pane of Explorer.
