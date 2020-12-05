@@ -16,7 +16,7 @@ Windows Registry Editor Version 5.00
 
 Replace the path to Windows Terminal with your own, as it differs between versions.
 
-You can also set the `Position` to either `Top` or `Bottom`.
+You can also set `Position` to either `Top` or `Bottom`.
 ```
 Windows Registry Editor Version 5.00
 
