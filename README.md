@@ -38,3 +38,8 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Directory\Background\shell\WindowsTerminalMenu\command]
 @="C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminalPreview_1.5.3242.0_x64__8wekyb3d8bbwe\\wt.exe -d \"%V \""
 ```
+### 3. Removal
+```
+reg delete HKEY_CLASSES_ROOT\Directory\shell\WindowsTerminalMenu
+reg delete HKEY_CLASSES_ROOT\Directory\Background\shell\WindowsTerminalMenu
+```
