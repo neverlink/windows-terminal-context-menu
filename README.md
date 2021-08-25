@@ -1,45 +1,40 @@
-## Context menu options to launch Windows Terminal in a directory.
+## Context menu entry for Windows Terminal
 
 ### 1. Removing the default "Open in Windows Terminal"
-By default, such an option exists, but only in the left pane of Explorer.
+By default, such an option exists, but only in the left Explorer pane.
 
-Get rid of it with the following registry key. [Source](https://github.com/microsoft/terminal/issues/8105#issuecomment-726789079)
+Get rid of it with the following registry key via cmd:
 
 ```
-Windows Registry Editor Version 5.00
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked]
-"{9F156763-7844-4DC4-B2B1-901F640F5155}"="Windows Terminal"
+REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked" /v "{9F156763-7844-4DC4-B2B1-901F640F5155}" /d "WindowsTerminal"
 ```
 
 ### 2. Adding the new keys
 
-Replace the path to Windows Terminal with your own, as it differs between versions.
+Replace the path to Windows Terminal with your own.
 
-You can also set `Position` to either `Top` or `Bottom`.
+Most easily found via Task Manager, but you could simply replace the version number with your own. 
+
+**Note!** Path must point to `wt.exe`, not `WindowsTerminal.exe`
+
+You can also set `Position` value to either `Top` or `Bottom`, blank by default.
 ```
-Windows Registry Editor Version 5.00
+Set "TerminalPath=C:\Program Files\WindowsApps\Microsoft.WindowsTerminalPreview_1.10.1933.0_x64__8wekyb3d8bbwe\wt.exe"
 
-; Left Pane
-[HKEY_CLASSES_ROOT\Directory\shell\WindowsTerminalMenu]
-"Icon"="C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminalPreview_1.5.3242.0_x64__8wekyb3d8bbwe\\wt.exe"
-@="Windows Terminal"
-"Position"=""
+Set "Key=HKCR\Directory\shell\WindowsTerminal"
+REG ADD "%Key%" /f /ve /d "Windows Terminal"
+REG ADD "%Key%" /f /v "Position" /d ""
+REG ADD "%Key%" /f /v "Icon" /d "%TerminalPath%"
+REG ADD "%Key%\command" /f /ve /d "%TerminalPath%"
 
-[HKEY_CLASSES_ROOT\Directory\shell\WindowsTerminalMenu\command]
-@="C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminalPreview_1.5.3242.0_x64__8wekyb3d8bbwe\\wt.exe -d \"%V \""
-
-; Right Pane
-[HKEY_CLASSES_ROOT\Directory\Background\shell\WindowsTerminalMenu]
-"Icon"="C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminalPreview_1.5.3242.0_x64__8wekyb3d8bbwe\\wt.exe"
-@="Windows Terminal"
-"Position"=""
-
-[HKEY_CLASSES_ROOT\Directory\Background\shell\WindowsTerminalMenu\command]
-@="C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminalPreview_1.5.3242.0_x64__8wekyb3d8bbwe\\wt.exe -d \"%V \""
+Set "Key=HKCR\Directory\Background\shell\WindowsTerminal"
+REG ADD "%Key%" /f /ve /d "Windows Terminal"
+REG ADD "%Key%" /f /v "Position" /d ""
+REG ADD "%Key%" /f /v "Icon" /d "%TerminalPath%"
+REG ADD "%Key%\command" /f /ve /d "%TerminalPath%"
 ```
 ### 3. Removal
 ```
-reg delete HKEY_CLASSES_ROOT\Directory\shell\WindowsTerminalMenu /f
-reg delete HKEY_CLASSES_ROOT\Directory\Background\shell\WindowsTerminalMenu /f
+REG DELETE HKEY_CLASSES_ROOT\Directory\shell\WindowsTerminal /f
+REG DELETE HKEY_CLASSES_ROOT\Directory\Background\shell\WindowsTerminal /f
 ```
