@@ -19,7 +19,7 @@ Most easily found via Task Manager, but you could simply replace the version num
 
 You can also set `Position` value to either `Top` or `Bottom`, blank by default.
 ```
-SET "TerminalPath=C:\Program Files\WindowsApps\Microsoft.WindowsTerminalPreview_1.10.1933.0_x64__8wekyb3d8bbwe\wt.exe"
+SET "TerminalPath=C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.9.1942.0_x64__8wekyb3d8bbwe\wt.exe"
 
 SET "Key=HKCR\Directory\shell\WindowsTerminal"
 REG ADD "%Key%" /f /ve /d "Windows Terminal"
