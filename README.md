@@ -15,7 +15,9 @@ Replace the path to Windows Terminal with your own.
 
 Most easily found via Task Manager, but you could simply replace the version number with your own. 
 
-**Note!** Path must point to `wt.exe`, not `WindowsTerminal.exe` Also, WindowsTerminal and WindowsTerminalPreview differ by folder name.
+**Note!**
+- Replace the `TerminalPath` below with your own. 
+- The path must point to `wt.exe`, not `WindowsTerminal.exe`. Keep in mind that WindowsTerminal and WindowsTerminalPreview differ by folder name.
 
 You can also set `Position` value to either `Top` or `Bottom`, blank by default.
 ```
